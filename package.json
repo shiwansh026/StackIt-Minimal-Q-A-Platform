@@ -8,6 +8,8 @@
     "install-backend": "cd Backend && npm install",
     "start": "cd Backend && npm start",
     "dev": "cd Backend && npm run dev",
+    "build": "cd Backend && npm install",
+    "postinstall": "npm run build",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
@@ -23,10 +25,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/stackit.git"
+    "url": "https://github.com/shiwansh026/StackIt-Minimal-Q-A-Platform.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/stackit/issues"
+    "url": "https://github.com/shiwansh026/StackIt-Minimal-Q-A-Platform/issues"
   },
-  "homepage": "https://github.com/yourusername/stackit#readme"
+  "homepage": "https://github.com/shiwansh026/StackIt-Minimal-Q-A-Platform#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
 } 

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 // In production, use process.env.JWT_SECRET and a .env file!
-const JWT_SECRET = 'your_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET || 'your_secret_key';
 
 function authenticateToken(req, res, next) {
   // Get the token from the Authorization header
