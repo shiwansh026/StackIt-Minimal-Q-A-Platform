@@ -4,60 +4,24 @@ A modern, responsive Q&A platform built with Node.js, Express, MySQL, and vanill
 
 ## 🌐 Live Demo
 
-**Deployed on Render:** [https://stackit-qa-platform.onrender.com](https://stackit-qa-platform.onrender.com)
+**Deployed on Railway:**  
+[https://stackit-qa-platform-production.up.railway.app/](https://stackit-qa-platform-production.up.railway.app/)
+
+---
 
 ## ✨ Features
 
-### 🔐 Authentication System
-- **User Registration & Login** - Secure JWT-based authentication
-- **Password Hashing** - bcrypt encryption for security
-- **Session Management** - Persistent login sessions
-- **Protected Routes** - Secure access to authenticated features
+- 🔐 **User Authentication** (JWT-based, secure password hashing)
+- ❓ **Ask & Answer Questions** (full CRUD for Q&A)
+- 💬 **Threaded Answers** (answers per question)
+- 🏷️ **Author Attribution** (see who posted what)
+- 📱 **Responsive Design** (mobile, tablet, desktop)
+- ⚡ **SPA Experience** (fast, seamless navigation)
+- 🛡️ **Security** (CORS, SQL injection prevention)
+- 🗃️ **MySQL Database** (persistent storage)
+- 🖥️ **Modern UI/UX** (clean, intuitive interface)
 
-### ❓ Question Management
-- **Ask Questions** - Post new questions with title and description
-- **View All Questions** - Browse questions on homepage
-- **Question Details** - Click to view full question and answers
-- **Real-time Updates** - Instant question posting and updates
-
-### 💬 Answer System
-- **Post Answers** - Respond to questions (requires login)
-- **View Answers** - See all answers for each question
-- **Answer Threading** - Organized answer display
-- **Author Attribution** - See who posted each answer
-
-### 🎨 Modern UI/UX
-- **Responsive Design** - Works on desktop, tablet, and mobile
-- **Clean Interface** - Modern, professional appearance
-- **Smooth Animations** - Hover effects and transitions
-- **Intuitive Navigation** - Easy-to-use navigation system
-
-### 🚀 Technical Features
-- **Single Page Application (SPA)** - Fast, seamless user experience
-- **RESTful API** - Clean, organized backend architecture
-- **Database Integration** - MySQL for data persistence
-- **CORS Support** - Cross-origin resource sharing enabled
-- **Error Handling** - Comprehensive error management
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Vanilla JavaScript** - ES6 modules and modern JS
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with flexbox and animations
-- **SPA Router** - Custom client-side routing
-
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **MySQL** - Relational database
-- **JWT** - JSON Web Tokens for authentication
-- **bcryptjs** - Password hashing
-
-### Development Tools
-- **Git** - Version control
-- **npm** - Package management
-- **nodemon** - Development auto-restart
+---
 
 ## 🚀 Quick Start
 
@@ -91,7 +55,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
 DB_NAME=qa_platform
-JWT_SECRET=e89f82a06c2a12aca76fb8b48662c928661f7c53592ef10ff7b752afafd22bbd
+JWT_SECRET=your_super_secret_key
 PORT=8080
 NODE_ENV=development
 ```
@@ -104,11 +68,15 @@ npm start
 ### 6. Open Your Browser
 Navigate to: `http://localhost:8080`
 
+---
+
 ## 🔑 Default Users
 
 For testing purposes, the database includes these default users:
 - **Username:** `admin` | **Password:** `password`
 - **Username:** `demo` | **Password:** `password`
+
+---
 
 ## 📁 Project Structure
 
@@ -117,43 +85,60 @@ StackIt/
 ├── Backend/                 # Node.js + Express API
 │   ├── config/             # Database configuration
 │   ├── middleware/         # Authentication middleware
-│   ├── models/            # Database models
-│   ├── routes/            # API endpoints
-│   ├── database.sql       # Database schema
-│   ├── server.js          # Main server file
-│   └── package.json       # Backend dependencies
-├── Frontend/              # Vanilla JavaScript SPA
-│   ├── js/               # Modular JavaScript
-│   │   ├── api.js        # API communication
-│   │   ├── auth.js       # Authentication logic
-│   │   ├── renderers.js  # UI rendering
-│   │   └── router.js     # Client-side routing
-│   ├── index.html        # Main page
-│   ├── app.js           # Application entry point
-│   └── style.css        # Modern styling
-├── render.yml            # Render deployment config
-├── railway.json          # Railway deployment config
-└── README.md            # This file
+│   ├── models/             # Database models
+│   ├── routes/             # API endpoints
+│   ├── database.sql        # Database schema
+│   ├── server.js           # Main server file
+│   └── package.json        # Backend dependencies
+├── Frontend/               # Vanilla JavaScript SPA
+│   ├── js/                 # Modular JavaScript
+│   │   ├── api.js          # API communication
+│   │   ├── auth.js         # Authentication logic
+│   │   ├── renderers.js    # UI rendering
+│   │   └── router.js       # Client-side routing
+│   ├── index.html          # Main page
+│   ├── app.js              # Application entry point
+│   └── style.css           # Modern styling
+├── render.yml              # Render deployment config
+├── railway.json            # Railway deployment config
+└── README.md               # This file
 ```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Vanilla JavaScript (ES6 modules), HTML5, CSS3
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL
+- **Authentication:** JWT, bcryptjs
+- **Deployment:** Railway, Render
+
+---
 
 ## 🌐 Deployment
 
-### Render.com (Free Tier)
-1. Connect your GitHub repository to Render
-2. Create a new Web Service
+### Railway.com (Recommended)
+1. Connect your GitHub repository to Railway
+2. Create a new project and add a MySQL database
 3. Set environment variables:
    ```
    NODE_ENV=production
-   PORT=10000
-   JWT_SECRET=your_secret_key
+   JWT_SECRET=your_super_secret_key
+   DB_HOST=your_railway_mysql_host
+   DB_USER=your_railway_mysql_user
+   DB_PASSWORD=your_railway_mysql_password
+   DB_NAME=your_railway_mysql_database
    ```
 4. Deploy and get your live URL!
 
-### Railway.com (Free Tier)
-1. Connect your GitHub repository to Railway
-2. Railway will auto-detect the `railway.json` file
-3. Add environment variables
-4. Deploy automatically
+### Render.com (Alternative)
+1. Connect your GitHub repository to Render
+2. Create a new Web Service
+3. Set environment variables (as above)
+4. Deploy and get your live URL!
+
+---
 
 ## 🔧 API Endpoints
 
@@ -170,25 +155,7 @@ StackIt/
 - `GET /api/questions/:id/answers` - Get answers for a question
 - `POST /api/questions/:id/answers` - Add answer (requires auth)
 
-## 🎯 Features in Detail
-
-### User Experience
-- **Intuitive Interface** - Easy navigation and user flow
-- **Responsive Design** - Optimized for all screen sizes
-- **Fast Loading** - Optimized performance
-- **Real-time Updates** - Instant feedback on actions
-
-### Security
-- **JWT Authentication** - Secure token-based auth
-- **Password Hashing** - bcrypt encryption
-- **SQL Injection Prevention** - Parameterized queries
-- **CORS Protection** - Cross-origin security
-
-### Database
-- **MySQL Integration** - Reliable data storage
-- **Optimized Queries** - Fast database operations
-- **Data Integrity** - Foreign key constraints
-- **Sample Data** - Pre-populated for testing
+---
 
 ## 🤝 Contributing
 
@@ -198,25 +165,14 @@ StackIt/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+---
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built with modern web technologies
-- Inspired by Stack Overflow and similar Q&A platforms
-- Designed for developers, by developers
-
-## 📞 Support
-
-If you have any questions or need help:
-- Open an issue on GitHub
-- Check the deployment guide in `DEPLOYMENT_FREE_TIER.md`
-- Review the setup instructions above
 
 ---
 
 **Made with ❤️ by the StackIt Team**
 
-**Live Demo:** [https://stackit-qa-platform.onrender.com](https://stackit-qa-platform.onrender.com)
+**Live Demo:** [https://stackit-qa-platform-production.up.railway.app/](https://stackit-qa-platform-production.up.railway.app/)
