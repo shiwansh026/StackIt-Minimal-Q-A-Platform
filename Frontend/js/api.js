@@ -1,4 +1,6 @@
-const API_BASE = 'http://localhost:8080/api';
+// Detect if we're in production (deployed) or development (localhost)
+const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+const API_BASE = isProduction ? '/api' : 'http://localhost:8080/api';
 
 function getAuthHeaders() {
   const token = localStorage.getItem('jwt');
