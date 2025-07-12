@@ -7,7 +7,10 @@ const router = express.Router();
 // Get all questions (public)
 router.get('/', (req, res) => {
   questionModel.getAll((err, questions) => {
-    if (err) return res.status(500).json({ error: 'Database error' });
+    if (err) {
+      // For free tier without database, return empty array
+      return res.json([]);
+    }
     res.json(questions);
   });
 });
@@ -15,7 +18,10 @@ router.get('/', (req, res) => {
 // Get a single question by ID (public)
 router.get('/:id', (req, res) => {
   questionModel.getById(req.params.id, (err, question) => {
-    if (err) return res.status(500).json({ error: 'Database error' });
+    if (err) {
+      // For free tier without database, return null
+      return res.json(null);
+    }
     res.json(question || null);
   });
 });
@@ -24,8 +30,11 @@ router.get('/:id', (req, res) => {
 router.post('/', authenticateToken, (req, res) => {
   const { title, body } = req.body;
   const author = req.user.username; // Provided by auth middleware
+  
   questionModel.create(title, body, author, (err, result) => {
-    if (err) return res.json({ success: false, message: 'Failed to post question' });
+    if (err) {
+      return res.json({ success: false, message: 'Database not available (free tier mode)' });
+    }
     res.json({ success: true, id: result.insertId });
   });
 });
