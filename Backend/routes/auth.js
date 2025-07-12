@@ -18,6 +18,7 @@ router.post('/register', (req, res) => {
   }
   
   // For free tier without database, return success
+  console.log('Database available check:', !!userModel.findByUsername);
   if (!userModel.findByUsername) {
     console.log('Database not available, returning demo success');
     return res.json({ success: true, message: 'Registration successful (demo mode)' });

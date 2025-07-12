@@ -17,6 +17,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
 
+// Simple test route for auth
+app.get('/api/auth-test', (req, res) => {
+  res.json({ message: 'Auth routes are accessible', status: 'success' });
+});
+
 // Try to load routes, but don't fail if database is not available
 try {
   const authRoutes = require('./routes/auth');
@@ -44,4 +49,5 @@ app.listen(PORT, () => {
   console.log(`🚀 StackIt server running on port ${PORT}`);
   console.log(`🌐 Frontend: http://localhost:${PORT}`);
   console.log(`📡 API Test: http://localhost:${PORT}/api/test`);
+  console.log(`🔐 Auth Test: http://localhost:${PORT}/api/auth-test`);
 });
