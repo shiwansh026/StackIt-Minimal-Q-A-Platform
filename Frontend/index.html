@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StackIt - Minimal Q&A Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1><a href="/" data-link>StackIt</a></h1>
+      <nav>
+        <a href="/" data-link id="home-link">Home</a>
+        <a href="/login" data-link id="login-link">Login</a>
+        <a href="/register" data-link id="register-link">Register</a>
+        <a href="/ask" data-link id="ask-link" style="display:none;">Ask Question</a>
+        <a href="#" id="logout-link" style="display:none;">Logout</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <div id="app">
+      <h2>Welcome to StackIt</h2>
+      <p>A minimal Q&A platform for developers.</p>
+    </div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

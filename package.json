@@ -1,0 +1,32 @@
+{
+  "name": "stackit-qa-platform",
+  "version": "1.0.0",
+  "description": "A minimal Q&A platform built with Node.js, Express, MySQL, and vanilla JavaScript",
+  "main": "Backend/server.js",
+  "scripts": {
+    "setup": "node setup.js",
+    "install-backend": "cd Backend && npm install",
+    "start": "cd Backend && npm start",
+    "dev": "cd Backend && npm run dev",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "qa",
+    "question-answer",
+    "stackoverflow",
+    "nodejs",
+    "express",
+    "mysql",
+    "javascript"
+  ],
+  "author": "StackIt Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/stackit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/stackit/issues"
+  },
+  "homepage": "https://github.com/yourusername/stackit#readme"
+} 
