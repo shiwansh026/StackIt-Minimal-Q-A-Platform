@@ -2,6 +2,7 @@ services:
   - type: web
     name: stackit-qa-platform
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: cd Backend && npm start
     envVars:

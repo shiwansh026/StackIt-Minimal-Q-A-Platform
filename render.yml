@@ -2,6 +2,7 @@ services:
   - type: web
     name: stackit-qa-platform
     env: node
+    plan: free
     buildCommand: npm install
     startCommand: cd Backend && npm start
     envVars:
@@ -10,17 +11,4 @@ services:
       - key: PORT
         value: 10000
       - key: JWT_SECRET
-        generateValue: true
-      - key: DB_HOST
-        value: your_database_host
-      - key: DB_USER
-        value: your_database_user
-      - key: DB_PASSWORD
-        value: your_database_password
-      - key: DB_NAME
-        value: your_database_name
-
-databases:
-  - name: stackit-mysql
-    databaseName: qa_platform
-    user: stackit_user 
+        generateValue: true 
